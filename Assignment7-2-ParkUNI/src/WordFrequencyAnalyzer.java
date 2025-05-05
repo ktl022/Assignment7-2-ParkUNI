@@ -36,10 +36,21 @@ public class WordFrequencyAnalyzer {
           System.out.println(filtered.get(i).getKey() + ": " + filtered.get(i).getValue());
       }
 
-      long endTime = System.nanoTime();
+      long endTime=System.nanoTime();
       System.out.println("TreeMap Time: " + (endTime - startTime) / 1_000_000 + " ms");
       
-      long endTime = System.nanoTime();
-      Sysytem.out.println("TreeMap Time:" + (endTime - startTime)
+     startTime=System.nanoTime()
+    		 Map<String, Integer> hashMap=new HashMap<>();
+     for(String word:words) {
+    	 hashMap.put(word, hashMap.getOrDefault(word,0)+1);
+     }
+     
+     filtered=new ArrayList<>();
+     for(Map.Entry<String, Integer>entry: hashMap.entrySet()) {
+    	 if(entry.getKey().length()>6) {
+    		 filtered.add(entry);
+    		 
+    	 }     
+  }
     		  
     		      
