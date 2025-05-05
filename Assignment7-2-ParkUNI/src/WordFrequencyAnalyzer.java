@@ -30,3 +30,16 @@ public class WordFrequencyAnalyzer {
         filtered.add(entry);
     }
 }
+	  filtered.sort((a, b) -> b.getValue().compareTo(a.getValue())); // 
+      System.out.println("Top 5 from TreeMap:");
+      for (int i = 0; i < 5; i++) {
+          System.out.println(filtered.get(i).getKey() + ": " + filtered.get(i).getValue());
+      }
+
+      long endTime = System.nanoTime();
+      System.out.println("TreeMap Time: " + (endTime - startTime) / 1_000_000 + " ms");
+      
+      long endTime = System.nanoTime();
+      Sysytem.out.println("TreeMap Time:" + (endTime - startTime)
+    		  
+    		      
