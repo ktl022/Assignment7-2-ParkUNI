@@ -17,3 +17,16 @@ public class WordFrequencyAnalyzer {
 	    }
 	}
 }
+	long startTime = System.nanoTime();
+
+	Map<String, Integer> treeMap = new TreeMap<>();
+	for (String word : words) {
+    treeMap.put(word, treeMap.getOrDefault(word, 0) + 1);
+}
+
+	List<Map.Entry<String, Integer>> filtered = new ArrayList<>();
+	for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+		if (entry.getKey().length() > 6) {
+        filtered.add(entry);
+    }
+}
