@@ -52,5 +52,12 @@ public class WordFrequencyAnalyzer {
     		 
     	 }     
   }
-    		  
+    filtered.sort((a, b) -> b.getValue().compareTo(a.getValue())); // descending
+        System.out.println("Top 5 from HashMap:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println(filtered.get(i).getKey() + ": " + filtered.get(i).getValue());
+        }
+
+        endTime = System.nanoTime();
+        System.out.println("HashMap Time: " + (endTime - startTime) / 1_000_000 + " ms");  		  
     		      
